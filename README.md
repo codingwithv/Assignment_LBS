@@ -194,6 +194,3 @@ The application can be deployed to:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-![Screenshot 2025-03-27 141351](https://github.com/user-attachments/assets/93d79952-1949-425f-814f-56dc62434bef)
-![Screenshot 2025-03-27 141324](https://github.com/user-attachments/assets/225516a5-c647-46a4-abf3-980b91f48028)
-![Screenshot 2025-03-27 141301](https://github.com/user-attachments/assets/4c7e0223-63aa-4bbf-afd8-f307f5800814)
