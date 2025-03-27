@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}"
+      th:with="title=${book.id != null} ? 'Edit Book' : 'Add New Book'">
+<head>
+  <title>Book Form</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div layout:fragment="content" class="container mt-5">
+  <h1 th:text="${title}" class="mb-4"></h1>
+  <form th:action="@{${book.id != null} ? '/books/edit/' + ${book.id} : '/books/new'}" th:object="${book}" method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" id="title" th:field="*{title}" class="form-control" required>
+      <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="invalid-feedback"></div>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Author:</label>
+      <input type="text" id="author" th:field="*{author}" class="form-control" required>
+      <div th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="invalid-feedback"></div>
+    </div>
+    <div class="mb-3">
+      <label for="genre" class="form-label">Genre:</label>
+      <input type="text" id="genre" th:field="*{genre}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">Status:</label>
+      <select id="status" th:field="*{status}" class="form-select">
+        <option value="AVAILABLE">Available</option>
+        <option value="CHECKED_OUT">Checked Out</option>
+      </select>
+    </div>
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>
+
+<div layout:fragment="scripts">
+  <script th:src="@{/js/form-validation.js}"></script>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</div>
+</body>
+</html>

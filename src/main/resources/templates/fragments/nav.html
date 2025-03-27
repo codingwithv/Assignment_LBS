@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-book me-2"></i>Library Management
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/}"><i class="fas fa-home me-1"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/books}"><i class="fas fa-book-open me-1"></i> Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/books/new}"><i class="fas fa-plus-circle me-1"></i> Add Book</a>
+        </li>
+      </ul>
+<!--      <form class="d-flex" th:action="@{/books/search}" method="get">-->
+<!--        <div class="input-group">-->
+<!--          <input type="search" name="title" class="form-control" placeholder="Search books..." aria-label="Search">-->
+<!--          <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>-->
+<!--        </div>-->
+<!--      </form>-->
+    </div>
+  </div>
+</nav>
+</body>
+</html>

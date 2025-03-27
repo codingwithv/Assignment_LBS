@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}"
+      th:with="title='Home'">
+<head>
+  <title>Library Management System</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <!-- Hero Section -->
+  <section class="hero bg-light py-5 mb-5 rounded-3">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold text-primary">
+        <i class="fas fa-book-open me-2"></i>Welcome to Our Library
+      </h1>
+      <p class="lead">Manage your book collection with ease</p>
+      <div class="mt-4">
+        <a th:href="@{/books}" class="btn btn-primary btn-lg me-3">
+          <i class="fas fa-book me-1"></i> Browse Books
+        </a>
+        <a th:href="@{/books/new}" class="btn btn-outline-primary btn-lg">
+          <i class="fas fa-plus me-1"></i> Add New Book
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features mb-5">
+    <div class="container">
+      <h2 class="text-center mb-4">System Features</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <i class="fas fa-search fa-3x text-primary mb-3"></i>
+              <h3 class="h5">Easy Search</h3>
+              <p>Quickly find books by title, author, or genre with our powerful search functionality.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <i class="fas fa-clipboard-list fa-3x text-primary mb-3"></i>
+              <h3 class="h5">Comprehensive Catalog</h3>
+              <p>View and manage your entire book collection in one organized interface.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+              <h3 class="h5">Status Tracking</h3>
+              <p>Keep track of which books are available or checked out with our status system.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="stats bg-light py-4 rounded-3">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h3 class="text-primary" th:text="${totalBooks} + '+'">100+</h3>
+          <p class="mb-0">Books in Collection</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-success" th:text="${availableBooks} + '+'">75+</h3>
+          <p class="mb-0">Books Available</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-danger" th:text="${checkedOutBooks} + '+'">25+</h3>
+          <p class="mb-0">Books Checked Out</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
